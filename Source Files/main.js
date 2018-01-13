@@ -29,10 +29,8 @@ $(function($) {
 
 	// For Background Slider
 	$('.background-slider').backstretch([
-		'http://placehold.it/1080x718?text=kids-img-1',
-		'http://placehold.it/1080x718?text=kids-img-2',
-		'http://placehold.it/1080x718?text=kids-img-3'
-	], {duration: 3000, fade: 750});
+		'/images/hero.jpg'
+	], {duration: 3000000, fade: 750});
 
 	// For Swiper Slider
 	var swiper = new Swiper('.swiper-container', {
