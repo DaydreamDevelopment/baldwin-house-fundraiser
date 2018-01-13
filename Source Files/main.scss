@@ -1,0 +1,1122 @@
+/**
+ * main.scss
+ * Project Name: DonateEase - Charity / fundraising template
+ *
+ *
+ */
+
+/**
+* ----------------------------------------------------------------------------------------
+*  [TABLE OF CONTENTS]
+*
+* 1. VARIABLES & MIXINS
+* 2. COMMON - Margin, Padding etc
+* 3. NAVIAGTION & HEADER
+* 4. SECTIONS
+* 5. COUNTER
+* 6. CAMPAIGN
+* 7. SHOP
+* 8. STORY CARD
+* 9. FEATURE BOXES
+* 10. Lists
+* 11. FORMS
+* 12. SLIDER
+* 13. PAGE LOADER
+* 14. MEDIA QUERIES
+* ----------------------------------------------------------------------------------------
+*/
+
+
+/**
+* ----------------------------------------------------------------------------------------
+* 1. VARIABLES & MIXINS
+* ----------------------------------------------------------------------------------------
+*/
+
+// Import Google Font
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700,400);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+// Variables
+$gw-body-font: 'Open Sans', sans-serif;
+$gw-heading-font: 'Montserrat', sans-serif;
+$primary-color: #ff512f;
+$light-text-color: #929292;
+$white-color: #fff;
+$light-gray-color: #f2f2f2;
+$black-color: #363636;
+
+// Add Bourbon
+@import "bourbon/bourbon";
+@import "bower_components/typographic/scss/typographic";
+
+// Typographic settings
+$body-font: $gw-body-font;
+$body-font-weight: 400;
+$body-color: $black-color;
+$header-font: $gw-heading-font;
+$header-font-weight: 700;
+$header-color: $black-color;
+$min-font: 12px;
+$max-font: 13px;
+
+// Fire up the mixin
+@include typographic;
+
+
+
+/**
+ * ----------------------------------------------------------------------------------------
+ *  2. COMMON
+ * ----------------------------------------------------------------------------------------
+ */
+@include selection {
+    background-color: $primary-color;
+    color: $white-color;
+}
+#{$all-buttons} {
+    background-color: $primary-color;
+    color: $white-color;
+    border: 1px solid $primary-color;
+    @include transition(all 0.4s ease-in-out);
+}
+#{$all-buttons-focus},
+#{$all-buttons-hover},
+#{$all-buttons-active} {
+    background-color: $white-color;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+}
+#{$all-text-inputs} {
+  border: 1px solid $white-color;
+  background: $white-color;
+  padding: 0.618em 1em;
+  font-family: $gw-heading-font;
+}
+
+#{$all-text-inputs-focus},
+#{$all-text-inputs-hover} {
+  border: 1px solid $light-gray-color;
+}
+
+#{$all-text-inputs-active} {
+  border: 1px solid $light-gray-color;
+}
+.gw-btn{
+    letter-spacing: 1px;
+    background-color: $primary-color;
+    color: $white-color;
+    border: 1px solid $primary-color;
+    padding: 0.618em 1em;
+    @include transition(all 0.3s linear);
+    font-family: $gw-heading-font;
+    font-size: $max-font;
+    &:hover, &:active, &:focus{
+        background-color: $white-color;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+    }
+}
+.form-control{
+    box-shadow: none;
+    height: auto;
+    padding: 0.618em 1em;
+}
+.outer {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.inner{
+    display: table-cell;
+    vertical-align: middle;
+}
+.underline {
+	position: relative;
+	padding-bottom: 0.667em;
+	margin-bottom: 1.5em;
+	&:after {
+		content: "";
+		width: 32px;
+		height: 1px;
+		background: $light-text-color;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+.full-underline::after {
+    width: 100%;
+}
+
+.longer-underline::after {
+    width: 60px;
+}
+
+.text-center .underline::after {
+    width: 4%;
+    left: 48%;
+}
+.text-center .longer-underline::after {
+    width: 8%;
+    left: 46%;
+}
+a{
+    text-decoration: none !important;
+}
+.mbn{
+    margin-bottom: 0 !important;
+}
+.mtn{
+    margin-top: 0 !important;
+}
+.pbn{
+    padding-bottom: 0 !important;
+}
+.ptn{
+    padding-top: 0 !important;
+}
+.zero-padding{
+    padding: 0px !important;
+}
+.mt1{
+    margin-top: 1em;
+}
+.mt2{
+    margin-top: 2em;
+}
+.mb1{
+    margin-bottom: 1em;
+}
+.mb2{
+    margin-bottom: 2em;
+}
+.pt1{
+    padding-top: 1em;
+}
+.pt2{
+    padding-top: 2em;
+}
+.pb1{
+    padding-bottom: 1em;
+}
+.pb2{
+    padding-bottom: 2em;
+}
+
+blockquote{
+    border-left: 0px;
+    position: relative;
+    margin-top: 2.618em;
+    &:before{
+        content: "\f347";
+        position: absolute;
+        top: -0.618em;
+        font-size: 2.618em;
+        color: rgba(0,0,0,0.1);
+        display: inline-block;
+        font-family: "Ionicons";
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        text-rendering: auto;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+.dropcap{
+    &:first-letter{
+        float: left;
+        font-size: 4.236em;
+        line-height: 1em;
+        margin-right: 0.618em;
+        font-family: $gw-heading-font;
+        color: $light-text-color;
+    }
+}
+
+
+
+/**
+ * ----------------------------------------------------------------------------------------
+ *  3. NAVIAGTION & HEADER
+ * ----------------------------------------------------------------------------------------
+ */
+.navbar{
+    margin-bottom: 0;
+    height: 60px;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    @include transition(all 0.3s linear);
+}
+.navbar-brand{
+    padding: 10px 15px;
+    font-family: $header-font;
+    height: 60px;
+}
+.navbar-nav{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    a{
+        color: $white-color;
+    }
+    > li > a {
+        padding-top: 0;
+        padding-bottom: 0;
+        line-height: 60px;
+        @include transition(all 0.3s linear);
+        &:hover, &:active, &:focus{
+            background: $primary-color;
+            color: $white-color;
+        }
+    }
+    .icon{
+        margin-right: 10px;
+    }
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
+    background: $primary-color;
+}
+.dropdown-menu{
+    border: 0px;
+}
+.navbar-nav > li > .dropdown-menu{
+    padding: 0;
+    > li > a{
+        padding: 0.618em;
+        text-transform: capitalize;
+        letter-spacing: 0;
+        &:hover{
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+}
+.left-separator{
+    border-left: 1px solid rgba(255,255,255,0.25);
+}
+.dark-logo{
+    display: none !important;
+}
+.head{
+    height: 100vh;
+    .container{
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to left, rgba(255, 81, 47, 0.7) , rgba(221, 36, 118, 0.7));
+    }
+    .animate-title,
+    h1 {
+        color: $white-color;
+        font-size: 4.236em;
+        margin-top: 0;
+        font-family: $gw-heading-font;
+        font-weight: 700;
+        line-height: 1em;
+    }
+    h1{
+        margin-bottom: 0;
+    }
+    h2{
+        color: $white-color;
+    }
+    .gw-btn{
+        margin-top: 1em;
+    }
+}
+.page-title{
+    height: 40vh;
+    .container{
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to left, rgba(255, 81, 47, 0.7) , rgba(221, 36, 118, 0.7));
+    }
+    h2{
+        color: $white-color;
+        font-size: 2.618em;
+        margin-top: 0;
+    }
+    h4{
+        color: $white-color;
+    }
+}
+.fixed-header{
+    .light-logo{
+        display: none !important;
+    }
+    .dark-logo{
+        display: inline-block !important;
+    }
+    .navbar{
+        background: $white-color;
+        color: $black-color;
+        box-shadow: 0 5px 10px 5px rgba(0,0,0,.04);
+        border-bottom: 0px;
+    }
+    .left-separator{
+        border-left: 1px solid darken($light-gray-color, 10%);
+    }
+    .navbar-nav{
+        a{
+            color: $black-color;
+        }
+    }
+}
+.navbar-toggle,
+.navbar-toggle:active,
+.navbar-toggle:focus{
+    color: $white-color;
+    background-color: $primary-color;
+    .icon-bar{
+        background-color: $white-color;
+    }
+}
+@media only screen and (max-width: 768px){
+    .navbar-collapse{
+        background: $white-color;
+    }
+    .navbar-nav{
+        a{
+            color: $black-color;
+        }
+    }
+}
+
+
+/**
+ * ----------------------------------------------------------------------------------------
+ * 4. SECTIONS
+ * ----------------------------------------------------------------------------------------
+ */
+.content-section{
+    padding: 6.854em 0px;
+    position: relative;
+    z-index: 0;
+}
+.content-section:nth-of-type(even){
+    background-color: $light-gray-color;
+}
+.content-section:nth-of-type(odd){
+    background-color: $white-color;
+}
+.section-header{
+    h3{
+        margin-bottom: 1em;
+        margin-top: 0;
+    }
+}
+.section-intro{
+    color: $light-text-color;
+    margin-bottom: 2.618em;
+}
+.footer{
+    padding: 4.236em 0px;
+    background: url(../images/dark-footer.png) repeat;
+    color: darken($white-color, 5%);
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6{
+        color: darken($white-color, 5%);
+    }
+    ul{
+        list-style: none;
+        padding-left: 0;
+    }
+    a{
+        color: darken($white-color, 5%);
+        @include transition(all 0.3s ease-in-out);
+        &:hover{
+            color: $primary-color;
+        }
+    }
+    .separator{
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+
+
+
+/**
+ * ----------------------------------------------------------------------------------------
+ * 5. COUNTER
+ * ----------------------------------------------------------------------------------------
+ */
+.counter-box{
+    position: relative;
+    text-align: center;
+    .count-icon{
+        position: absolute;
+        font-size: 6.854em;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: -1;
+        color: $light-gray-color;
+    }
+}
+.content-section:nth-of-type(even){
+    .count-icon{
+        color: darken($light-gray-color, 5%);
+    }
+}
+
+
+/**
+ * ----------------------------------------------------------------------------------------
+ * 6. CAMPAIGN
+ * ----------------------------------------------------------------------------------------
+ */
+.campaign-card{
+    background: $white-color;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 1.618em;
+    img{
+        @include border-top-radius(5px);
+        @include transform(scale(1.2) rotate(-3deg));
+        @include transition(all 0.5s ease-in-out);
+    }
+    &:hover{
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+        img{
+            @include transform(scale(1.0) rotate(0deg));
+        }
+    }
+    h5{
+        margin-top: 0;
+    }
+    .campaign-info{
+        width: 80%;
+        margin: -30px 10% 0 10%;
+        padding: 10px 0px;
+        background: $white-color;
+        position: relative;
+        @include border-top-radius(5px);
+        p{
+            text-align: left;
+        }
+    }
+    .category{
+        margin-bottom: 1em;
+        position: relative;
+        z-index: 0;
+        span{
+            display: inline-block;
+            padding: 0.382em 1em;
+            background-color: $primary-color;
+            color: $white-color;
+            margin: auto;
+            line-height: 1em;
+            transform: skew(-10deg);
+            border-radius: 2px;
+        }
+        &:after{
+            content: "";
+            height: 1px;
+            z-index: 2;
+            background-color: $primary-color;
+            left: 20%;
+            right: 20%;
+            position: absolute;
+            bottom: 50%;
+            z-index: -1;
+        }
+    }
+    .campaign-status{
+        background: $light-gray-color;
+        padding: 0;
+        padding-bottom: 1em;
+        .progress-bar{
+            height: 10px;
+            position: relative;
+            background: darken($light-gray-color, 5%);
+            width: 100%;
+            box-shadow: none;
+            margin-bottom: 1em;
+            span{
+                display: block;
+                height: 100%;
+                position: relative;
+            }
+        }
+        p{
+            margin-bottom: 0;
+        }
+    }
+    .card-footer{
+        a{
+            color: $white-color;
+            text-align: center;
+            width: 50%;
+            display: inline-block;
+            text-transform: uppercase;
+            padding: 0.618em 0;
+            font-family: $gw-heading-font;
+            @include transition(all 0.4s ease-in-out);
+            &:hover{
+                background: $white-color;
+                color: $primary-color;
+            }
+        }
+        .link-left{
+            @include linear-gradient(to left, #FF512F , #DD2476);
+            float: left;
+            border-radius: 0px 0px 0px 5px;
+
+        }
+        .link-right{
+            @include linear-gradient(to left, #000000 , #434343);
+            float: right;
+            border-radius: 0px 0px 5px 0px;
+        }
+    }
+}
+.campaign-details{
+    text-align: left;
+    padding: 2.618em;
+}
+.donate-onpage{
+    text-align: left;
+}
+.single-campaign{
+    .campaign-card .campaign-info{
+        margin-top: 0px;
+    }
+}
+
+
+
+
+/**
+ * ----------------------------------------------------------------------------------------
+ * 7. SHOP
+ * ----------------------------------------------------------------------------------------
+ */
+.shop-card{
+    background: $white-color;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 1.618em;
+    img{
+        @include border-top-radius(5px);
+        @include transition(all 0.5s ease-in-out);
+    }
+    &:hover{
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    }
+    h5{
+        margin-top: 0;
+    }
+    .shop-info{
+        width: 80%;
+        margin: -30px 10% 0 10%;
+        padding: 10px 0px;
+        background: $white-color;
+        position: relative;
+        @include border-top-radius(5px);
+        p{
+            text-align: left;
+        }
+    }
+    .category{
+        margin-bottom: 1em;
+        position: relative;
+        z-index: 0;
+        span{
+            display: inline-block;
+            padding: 0.382em 1em;
+            background-color: $primary-color;
+            color: $white-color;
+            margin: auto;
+            line-height: 1em;
+            transform: skew(-10deg);
+            border-radius: 2px;
+        }
+        &:after{
+            content: "";
+            height: 1px;
+            z-index: 2;
+            background-color: $primary-color;
+            left: 20%;
+            right: 20%;
+            position: absolute;
+            bottom: 50%;
+            z-index: -1;
+        }
+    }
+    .shop-status{
+        background: $light-gray-color;
+        padding: 0;
+        padding-bottom: 1em;
+        .progress-bar{
+            height: 10px;
+            position: relative;
+            background: darken($light-gray-color, 5%);
+            width: 100%;
+            box-shadow: none;
+            margin-bottom: 1em;
+            span{
+                display: block;
+                height: 100%;
+                position: relative;
+            }
+        }
+        p{
+            margin-bottom: 0;
+        }
+    }
+    .card-footer{
+        a{
+            color: $white-color;
+            text-align: center;
+            width: 50%;
+            display: inline-block;
+            text-transform: uppercase;
+            padding: 0.618em 0;
+            font-family: $gw-heading-font;
+            @include transition(all 0.4s ease-in-out);
+            &:hover{
+                background: $white-color;
+                color: $primary-color;
+            }
+        }
+        .link-left{
+            @include linear-gradient(to left, #FF512F , #DD2476);
+            float: left;
+            border-radius: 0px 0px 0px 5px;
+
+        }
+        .link-right{
+            @include linear-gradient(to left, #000000 , #434343);
+            float: right;
+            border-radius: 0px 0px 5px 0px;
+        }
+    }
+}
+.shop-categories{
+    list-style: none;
+    li{
+        padding: 1em;
+        border: 1px dashed darken($light-gray-color, 5%);
+        font-family: $gw-heading-font;
+        background: $light-gray-color;
+        @include transition(all 0.4s ease-in-out);
+        a{
+            color: $primary-color;
+            display: block;
+        }
+        &:hover{
+            background: $white-color;
+        }
+    }
+}
+.shop-overview{
+    input[type='text']{
+        background: $light-gray-color;
+        border-color: $light-gray-color;
+    }
+}
+.shop-description{
+    margin-top: 1.618em;
+    .nav-tabs{
+        border-bottom: 0;
+        margin: 0;
+        padding: 0;
+        display: table;
+        width: 100%;
+        li{
+            display: table-cell;
+            text-align: center;
+            float: none;
+            > a {
+                background: $light-gray-color;
+                border-bottom: none;
+                border-left: 1px solid darken($light-gray-color, 5%);
+                border-right: 1px solid darken($light-gray-color, 5%);
+                margin-right: 0;
+            }
+        }
+        li.active{
+            > a {
+                background: $white-color;
+            }
+        }
+    }
+    .tab-content{
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.04);
+        background-color: $white-color;
+        border: 1px solid darken($light-gray-color, 5%);
+        border-top: 0;
+        padding: 1.618em;
+    }
+}
+.related-products{
+    padding: 1.618em;
+    margin: 1.618em;
+    text-align: left;
+}
+
+
+
+/**
+ * ----------------------------------------------------------------------------------------
+ * 8. STORY CARD
+ * ----------------------------------------------------------------------------------------
+ */
+.story-card{
+    background: $white-color;
+    padding: 0px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.618em;
+    overflow: hidden;
+    a{
+        color: $black-color;
+        &:hover{
+            color: $primary-color;
+        }
+    }
+    .col-md-5{
+        overflow: hidden;
+    }
+    img{
+        @include border-left-radius(5px);
+        @include transition(all 0.4s ease-in-out);
+    }
+    &:hover{
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+        img{
+            @include transform(scale(1.1) rotate(-3deg));
+        }
+    }
+}
+
+
+/**
+ * ----------------------------------------------------------------------------------------
+ * 9. FEATURE BOXES
+ * ----------------------------------------------------------------------------------------
+ */
+.features-row {
+	.col-md-3,
+	.col-md-6 {
+		border: 1px solid darken($light-gray-color, 5%);
+		margin-left: -1px;
+		margin-top: -1px;
+		position: relative;
+	}
+	.col-md-3:last-child {
+		margin-left: -2px;
+	}
+	.col-md-3 {
+		.bg-icon {
+			position: absolute;
+			font-size: 6.854em;
+			color: $light-gray-color;
+			right: 20px;
+            top: 0px;
+            z-index: -1;
+		}
+	}
+}
+.content-section:nth-of-type(even){
+    .bg-icon {
+        color: darken($light-gray-color, 5%);
+    }
+}
+.feature-diff{
+    padding: 0 1.618em;
+}
+.black-gradient {
+	@include linear-gradient(to left, #000000 , #434343);
+	color: $white-color;
+	h2,
+	h3,
+	h4 {
+		color: $white-color;
+	}
+}
+.img-box{
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/**
+ * ----------------------------------------------------------------------------------------
+ * 10. Lists
+ * ----------------------------------------------------------------------------------------
+ */
+.ul-style-1{
+    list-style: none;
+    li{
+        margin-bottom: 0.618em;
+    }
+    .list-icon{
+        margin-right: 10px;
+        background: $primary-color;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 50%;
+        color: $white-color;
+    }
+}
+
+
+
+/**
+ * ----------------------------------------------------------------------------------------
+ * 11. FORMS
+ * ----------------------------------------------------------------------------------------
+ */
+.donate-form-wrap{
+    background: $light-gray-color;
+    input[type='submit'] {
+        margin: auto;
+    }
+}
+input {
+    &:active,
+    &:focus{
+        outline: 2px solid darken($light-gray-color, 10%);
+    }
+}
+input[type='text'],
+input[type='email'] {
+    width: 100%;
+}
+legend{
+    font-family: $gw-heading-font;
+    font-size: 1em;
+    border-bottom: 0;
+    margin-top: 1em;
+}
+.input-group-addon{
+    border: 0px;
+    background-color: darken($light-gray-color, 5%);
+}
+fieldset{
+    border-width: 0;
+    ul{
+        list-style: none;
+        li{
+            display: inline-block;
+            label{
+                display: inline-block;
+                float: right;
+                margin-left: 1em;
+                margin-right: 1.618em;
+            }
+        }
+    }
+}
+.contact-form-wrap{
+    input,
+    textarea {
+        background: $light-gray-color;
+        border: 0;
+        &:active,
+        &:focus{
+            outline: 2px solid darken($light-gray-color, 10%);
+            box-shadow: none;
+        }
+    }
+}
+
+
+
+/**
+ * ----------------------------------------------------------------------------------------
+ * 12. SLIDER
+ * ----------------------------------------------------------------------------------------
+ */
+.swiper-container{
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide{
+    .outer{
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+    .inner{
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+    h2{
+        font-size: 4.236em;
+    }
+}
+#slide-1{
+    background: url(http://placehold.it/1080x718?text=kids-img-1) center center no-repeat;
+    background-size: cover;
+}
+#slide-2{
+    background: url(http://placehold.it/1080x718?text=kids-img-2) center center no-repeat;
+    background-size: cover;
+}
+#slide-3{
+    background: url(http://placehold.it/1080x718?text=kids-img-3) center center no-repeat;
+    background-size: cover;
+}
+#slide-4{
+    background: url(http://placehold.it/1080x718?text=kids-img-4) center center no-repeat;
+    background-size: cover;
+}
+
+
+
+/**
+ * ----------------------------------------------------------------------------------------
+ * 13. PAGE LOADER
+ * ----------------------------------------------------------------------------------------
+ */
+ .page-loader{
+     position: fixed;
+     width: 100%;
+     height: 100%;
+     z-index: 1031;
+     top: 0;
+     left: 0;
+     text-align: center;
+     @include linear-gradient(to left, #FF512F , #DD2476);
+ }
+ .disable-loader{
+     display: inline-block;
+     color: rgba(255,255,255,0.6);
+     position: absolute;
+     bottom: 20px;
+     right: 30px;
+     border: 1px dashed rgba(255,255,255,0.6);
+     padding: 0.382em;
+     border-radius: 5px;
+     cursor: pointer;
+ }
+ .sk-folding-cube {
+   margin: 20px auto;
+   width: 40px;
+   height: 40px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   margin: auto;
+   -webkit-transform: rotateZ(45deg);
+           transform: rotateZ(45deg);
+ }
+
+ .sk-folding-cube .sk-cube {
+   float: left;
+   width: 50%;
+   height: 50%;
+   position: relative;
+   -webkit-transform: scale(1.1);
+       -ms-transform: scale(1.1);
+           transform: scale(1.1);
+ }
+ .sk-folding-cube .sk-cube:before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #fff;
+   -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+           animation: sk-foldCubeAngle 2.4s infinite linear both;
+   -webkit-transform-origin: 100% 100%;
+       -ms-transform-origin: 100% 100%;
+           transform-origin: 100% 100%;
+ }
+ .sk-folding-cube .sk-cube2 {
+   -webkit-transform: scale(1.1) rotateZ(90deg);
+           transform: scale(1.1) rotateZ(90deg);
+ }
+ .sk-folding-cube .sk-cube3 {
+   -webkit-transform: scale(1.1) rotateZ(180deg);
+           transform: scale(1.1) rotateZ(180deg);
+ }
+ .sk-folding-cube .sk-cube4 {
+   -webkit-transform: scale(1.1) rotateZ(270deg);
+           transform: scale(1.1) rotateZ(270deg);
+ }
+ .sk-folding-cube .sk-cube2:before {
+   -webkit-animation-delay: 0.3s;
+           animation-delay: 0.3s;
+ }
+ .sk-folding-cube .sk-cube3:before {
+   -webkit-animation-delay: 0.6s;
+           animation-delay: 0.6s;
+ }
+ .sk-folding-cube .sk-cube4:before {
+   -webkit-animation-delay: 0.9s;
+           animation-delay: 0.9s;
+ }
+ @-webkit-keyframes sk-foldCubeAngle {
+   0%, 10% {
+     -webkit-transform: perspective(140px) rotateX(-180deg);
+             transform: perspective(140px) rotateX(-180deg);
+     opacity: 0;
+   } 25%, 75% {
+     -webkit-transform: perspective(140px) rotateX(0deg);
+             transform: perspective(140px) rotateX(0deg);
+     opacity: 1;
+   } 90%, 100% {
+     -webkit-transform: perspective(140px) rotateY(180deg);
+             transform: perspective(140px) rotateY(180deg);
+     opacity: 0;
+   }
+ }
+
+ @keyframes sk-foldCubeAngle {
+   0%, 10% {
+     -webkit-transform: perspective(140px) rotateX(-180deg);
+             transform: perspective(140px) rotateX(-180deg);
+     opacity: 0;
+   } 25%, 75% {
+     -webkit-transform: perspective(140px) rotateX(0deg);
+             transform: perspective(140px) rotateX(0deg);
+     opacity: 1;
+   } 90%, 100% {
+     -webkit-transform: perspective(140px) rotateY(180deg);
+             transform: perspective(140px) rotateY(180deg);
+     opacity: 0;
+   }
+ }
+
+
+
+/**
+ * ----------------------------------------------------------------------------------------
+ * 14. MEDIA QUERIES
+ * ----------------------------------------------------------------------------------------
+ */
+@media only screen and (max-width: 768px){
+    .counter-title{
+        text-align: center;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .counter-title{
+        text-align: center;
+    }
+}
