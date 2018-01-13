@@ -29,7 +29,7 @@ $(function($) {
 
 	// For Background Slider
 	$('.background-slider').backstretch([
-		'/images/hero.jpg'
+		'images/hero.jpg'
 	], {duration: 3000000, fade: 750});
 
 	// For Swiper Slider
