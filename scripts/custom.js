@@ -93,6 +93,7 @@ function updateTotal() {
 
   totalDonation = totalCost;
   $('#ticket-total-price').val('$' + totalCost / 100 + '.00');
+  $('#total-donation-cost').text('$' + totalCost / 100 + '.00');
 }
 
 $(document).ready(function() {
