@@ -60,6 +60,7 @@ var ticketsSelected = [];
 var ticketPrice = 1000;
 var ticketPriceFive = 3000;
 var ticketPriceTen = 5000;
+var totalDonation = 0;
 
 function updateTotal() {
   var totalCost = 0;
@@ -90,6 +91,7 @@ function updateTotal() {
     totalCost += totalTickets * ticketPrice;
   }
 
+  totalDonation = totalCost;
   $('#ticket-total-price').val('$' + totalCost / 100 + '.00');
 }
 
