@@ -57,29 +57,67 @@ form.addEventListener('submit', function(event) {
 });
 
 var ticketsSelected = [];
+var ticketPrice = 1000;
+var ticketPriceFive = 3000;
+var ticketPriceTen = 5000;
+
+function updateTotal() {
+  var totalCost = 0;
+  var totalTickets = 0;
+
+  for(var i=0; i<ticketsSelected.length; i++) {
+    totalTickets += ticketsSelected[i].count;
+  }  
+
+  if(totalTickets >= 10) {
+    totalCost += Math.floor(totalTickets / 10) * ticketPriceTen;
+    var remainingTicketsTen = totalTickets % 10;
+    if(remainingTicketsTen >= 5) {
+      totalCost += Math.floor(remainingTicketsTen / 5) * ticketPriceFive;
+      var remainingTicketsFive = remainingTicketsTen % 5;
+      totalCost += remainingTicketsFive * ticketPrice;
+    }
+    else {
+      totalCost += remainingTicketsTen * ticketPrice;
+    }
+  }
+  else if(totalTickets >= 5) {
+    totalCost += Math.floor(totalTickets / 5) * ticketPriceFive;
+    var remainingTicketsFive = totalTickets % 5;
+    totalCost += remainingTicketsFive * ticketPrice;
+  }
+  else {
+    totalCost += totalTickets * ticketPrice;
+  }
+
+  $('#ticket-total-price').val('$' + totalCost / 100 + '.00');
+}
 
 $(document).ready(function() {
   $(".link-left").click(function(event) {
     event.preventDefault();
     var spanId = event.target.id.replace("add", "count");
     var ticketId = event.target.id.replace("add-", "");
+    console.log(ticketId);
     if(ticketsSelected.length < 1) {
       ticketsSelected.push({id: ticketId, count: 1});
-      $('#' + spanId).text = "1";
+      $('#' + spanId).text("1");
     }
     else {
       for(var i=0; i<ticketsSelected.length; i++) {
         if(ticketsSelected[i].id === ticketId) {
           ticketsSelected[i].count++;
-          $('#' + spanId).text = ticketsSelected[i].count.toString();
+          $('#' + spanId).text(ticketsSelected[i].count.toString());
+          break;
         }
         else if(i === ticketsSelected.length - 1) {
           ticketsSelected.push({id: ticketId, count: 1});
-          $('#' + spanId).text = "1";
+          $('#' + spanId).text("1");
+          break;
         }
       }
     }
-    console.log(ticketsSelected);
+    updateTotal();
   });
   $(".link-right").click(function(event) {
     event.preventDefault();
@@ -92,10 +130,10 @@ $(document).ready(function() {
         if(ticketsSelected[i].count > 1) {
           ticketsSelected[i].count--;
           tempTicketsSelected.push(ticketsSelected[i]);
-          $('#' + spanId).text = ticketsSelected[i].count.toString();
+          $('#' + spanId).text(ticketsSelected[i].count.toString());
         }
         else {
-          $('#' + spanId).text = "0";
+          $('#' + spanId).text("0");
         }
       }
       else {
@@ -103,6 +141,6 @@ $(document).ready(function() {
       }
     }
     ticketsSelected = tempTicketsSelected;
-    console.log(ticketsSelected);
+    updateTotal();
   });
 });
