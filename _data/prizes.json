@@ -1,0 +1,23 @@
+[
+    {
+        "id": "daydream-website",
+        "title": "One Page Website",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "A one page website to get your business an online presence or modernize your existing business website.",
+        "value": "$1500"
+    },
+    {
+        "id": "rawfit-membership",
+        "title": "1 Year Gym Membership",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "A one year gym access membership.",
+        "value": "$384"
+    },
+    {
+        "id": "rawfit-rodan-fields",
+        "title": "Microdermabrasion Paste",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "A Rodan Fields microdermabrasion paste.",
+        "value": "$105"
+    }
+]

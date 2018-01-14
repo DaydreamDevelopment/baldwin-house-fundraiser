@@ -53,8 +53,8 @@
     border: 2px solid #ff512f;
 }
 
-.shop-card .card-footer a {
-    width: 100%;
+.payment-help {
+    font-weight: normal;
 }
 
 #donate-now, #donate-form-wrap {

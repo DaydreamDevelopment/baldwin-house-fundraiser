@@ -55,3 +55,54 @@ form.addEventListener('submit', function(event) {
     }
   });
 });
+
+var ticketsSelected = [];
+
+$(document).ready(function() {
+  $(".link-left").click(function(event) {
+    event.preventDefault();
+    var spanId = event.target.id.replace("add", "count");
+    var ticketId = event.target.id.replace("add-", "");
+    if(ticketsSelected.length < 1) {
+      ticketsSelected.push({id: ticketId, count: 1});
+      $('#' + spanId).text = "1";
+    }
+    else {
+      for(var i=0; i<ticketsSelected.length; i++) {
+        if(ticketsSelected[i].id === ticketId) {
+          ticketsSelected[i].count++;
+          $('#' + spanId).text = ticketsSelected[i].count.toString();
+        }
+        else if(i === ticketsSelected.length - 1) {
+          ticketsSelected.push({id: ticketId, count: 1});
+          $('#' + spanId).text = "1";
+        }
+      }
+    }
+    console.log(ticketsSelected);
+  });
+  $(".link-right").click(function(event) {
+    event.preventDefault();
+    var tempTicketsSelected = [];
+    var spanId = event.target.id.replace("remove", "count");
+    var ticketId = event.target.id.replace("remove-", "");
+
+    for(var i=0; i<ticketsSelected.length; i++) {
+      if(ticketsSelected[i].id === ticketId) {
+        if(ticketsSelected[i].count > 1) {
+          ticketsSelected[i].count--;
+          tempTicketsSelected.push(ticketsSelected[i]);
+          $('#' + spanId).text = ticketsSelected[i].count.toString();
+        }
+        else {
+          $('#' + spanId).text = "0";
+        }
+      }
+      else {
+        tempTicketsSelected.push(ticketsSelected[i]);
+      }
+    }
+    ticketsSelected = tempTicketsSelected;
+    console.log(ticketsSelected);
+  });
+});
