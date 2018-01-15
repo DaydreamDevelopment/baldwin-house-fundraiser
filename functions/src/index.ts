@@ -12,11 +12,9 @@ const corsAllowed = cors({ origin: true });
  // Charge and save an entry
  export const saveEntry = functions.https.onRequest((req, res) => {
     corsAllowed(req, res, async () => {
+        
         // Verify cost is correct
 
-        // Create charge using token
-
-        // Create a new customer and then a new charge for that customer:
         try {
             // Create the customer in Stripe
             const customer = await stripe.customers.create({email: req.body.email});
