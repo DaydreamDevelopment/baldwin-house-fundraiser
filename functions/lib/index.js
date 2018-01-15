@@ -41,13 +41,12 @@ exports.saveEntry = functions.https.onRequest((req, res) => {
             // Create a charge on the users source
             const charge = yield stripe.charges.create({ amount: parseInt(req.body.donation), currency: 'cad', customer: customer.id });
             // Save data to database
-            yield donationDB.set({
+            yield donationDB.child(charge.id).set({
                 customer: customer,
-                source: source,
                 charge: charge,
                 donation: req.body.donation,
                 email: req.body.email,
-                phon: req.body.phone,
+                phone: req.body.phone,
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 address: req.body.address,

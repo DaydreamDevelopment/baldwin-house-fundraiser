@@ -175,20 +175,18 @@ $(document).ready(function() {
         errorElement.textContent = result.error.message;
       } else {
         // Send the token to your server
-        stripeTokenHandler(result.token);
+        stripeTokenHandler(result.token.id);
       }
     });
   });
   donationRef.on('value', function(snapshot) {
-    var donations = snapshot.val();
-    console.log(donations);
     var totalDonations = 0;
-    for(var i=0; i<donations.length; i++) {
-      totalDonations += donations[i].donation;
-    }
+    snapshot.forEach(childSnapshot => {
+      totalDonations += parseInt(childSnapshot.val().donation); 
+    });
     var donationPercentage = Math.round((totalDonations / donationGoal) * 100);
-    $('donation-amount').text(Math.round(totalDonations / 100).toString());
-    $('donation-progress').css('width', donationPercentage.toString() + '%');
+    $('#donation-amount').text('$' + Math.round(totalDonations / 100));
+    $('#donation-progress').css('width', donationPercentage.toString() + '%');
   });
-  $('donation-goal').text(Math.round(donationGoal / 100).toString());
+  $('#donation-goal').text('$' + Math.round(donationGoal / 100));
 });

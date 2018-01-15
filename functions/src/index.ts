@@ -37,12 +37,12 @@ const tenTicketPrice = 5000;
             const charge = await stripe.charges.create({amount: parseInt(req.body.donation), currency: 'cad', customer: customer.id});
             
             // Save data to database
-            await donationDB.set({
+            await donationDB.child(charge.id).set({
                 customer: customer,
                 charge: charge,
                 donation: req.body.donation,
                 email: req.body.email,
-                phon: req.body.phone,
+                phone: req.body.phone,
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 address: req.body.address,
