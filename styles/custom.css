@@ -175,6 +175,20 @@
   #donation-progress {
       width: 0%;
   }
+
+  #error-message-field {
+    color: red;
+  }
+
+  #sucess-message-field {
+    color: green;
+  }
+
+  .status-text {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+  }
   
   @media screen and (max-width: 520px) {
       #main-sponsor-rawfit {

@@ -56,7 +56,19 @@ function stripeTokenHandler(token) {
     type: 'POST',
     url: 'https://us-central1-valentine-baldwin.cloudfunctions.net/saveEntry',
     data: data,
-    success: function() { console.log('Data saved to DB') },
+    success: function() { 
+      $.LoadingOverlay("hide"); 
+      $("#success-message-field").show();
+      $("#success-message-field").text('Thank you for your donation! Your tickets have been entered for the draw and you will receive a donation receipt by email or mail.'); 
+      setTimeout(function(){
+        $("#success-message-field").hide();
+      }, 20000);
+    },
+    error: function() { 
+      $.LoadingOverlay("hide"); 
+      $("#error-message-field").text('There was an error.');
+      $("#error-message-field").show();
+    },
     dataType: 'json'
   });
 }
@@ -156,23 +168,28 @@ $(document).ready(function() {
   });
   $("#donate-now-button").click(function() {
     event.preventDefault();
+    $("#error-message-field").hide();
     if(!$('#donate-first').val() && !$('#donate-last').val() &&
        !$('#donate-address').val() && !$('#donate-postal').val() &&
        !$('#donate-phone').val() && !$('#donate-email').val()) {
       $("#error-message-field").text('You must complete all form fields.');
+      $("#error-message-field").show();
       return;
     }
     if($('#donate-first').val().trim() == '' && $('#donate-last').val().trim() == '' &&
        $('#donate-address').val().trim() == '' && $('#donate-postal').val().trim() == '' &&
        $('#donate-phone').val().trim() == '' && $('#donate-email').val().trim() == '') {
       $("#error-message-field").text('You must complete all form fields.');
+      $("#error-message-field").show();
       return;
     }
+    $.LoadingOverlay("show");
     stripe.createToken(card).then(function(result) {
       if (result.error) {
         // Inform the user if there was an error
         var errorElement = document.getElementById('card-errors');
         errorElement.textContent = result.error.message;
+        $.LoadingOverlay("hide");
       } else {
         // Send the token to your server
         stripeTokenHandler(result.token.id);
