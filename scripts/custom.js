@@ -39,6 +39,27 @@ card.addEventListener('change', function(event) {
   }
 });
 
+function stripeTokenHandler(token) {
+  var url = "";
+  var data = {
+    firstName: "",
+    lastName: "",
+    address: "",
+    postalCode: "",
+    phone: "",
+    email: "",
+    token: token,
+    tickets: ticketsSelected
+  }
+  $.ajax({
+    type: 'POST',
+    url: 'url',
+    data: data,
+    success: function() { console.log('Data saved to DB') },
+    dataType: 'json'
+  });
+}
+
 // Handle form submission
 var form = document.getElementById('payment-form');
 form.addEventListener('submit', function(event) {
