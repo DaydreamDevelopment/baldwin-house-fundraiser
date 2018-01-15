@@ -39,7 +39,6 @@ const tenTicketPrice = 5000;
             // Save data to database
             await donationDB.set({
                 customer: customer,
-                source: source,
                 charge: charge,
                 donation: req.body.donation,
                 email: req.body.email,
