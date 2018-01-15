@@ -40,17 +40,18 @@ card.addEventListener('change', function(event) {
 });
 
 function stripeTokenHandler(token) {
-  var url = "";
   var data = {
-    firstName: "",
-    lastName: "",
-    address: "",
-    postalCode: "",
-    phone: "",
-    email: "",
+    firstName: $('#donate-first').val(),
+    lastName: $('#donate-last').val(),
+    address: $('#donate-address').val(),
+    postalCode: $('#donate-postal').val(),
+    phone: $('#donate-phone').val(),
+    email: $('#donate-email').val(),
     token: token,
-    tickets: ticketsSelected
+    tickets: ticketsSelected,
+    donation: totalDonation
   }
+  console.log(data);
   $.ajax({
     type: 'POST',
     url: 'https://us-central1-valentine-baldwin.cloudfunctions.net/saveEntry',
@@ -60,28 +61,13 @@ function stripeTokenHandler(token) {
   });
 }
 
-// Handle form submission
-var form = document.getElementById('payment-form');
-form.addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  stripe.createToken(card).then(function(result) {
-    if (result.error) {
-      // Inform the user if there was an error
-      var errorElement = document.getElementById('card-errors');
-      errorElement.textContent = result.error.message;
-    } else {
-      // Send the token to your server
-      stripeTokenHandler(result.token);
-    }
-  });
-});
-
 var ticketsSelected = [];
 var ticketPrice = 1000;
 var ticketPriceFive = 3000;
 var ticketPriceTen = 5000;
 var totalDonation = 0;
+var donationRef = firebase.database().ref('donations');
+var donationGoal = 400000;
 
 function updateTotal() {
   var totalCost = 0;
@@ -115,6 +101,7 @@ function updateTotal() {
   totalDonation = totalCost;
   $('#ticket-total-price').val('$' + totalCost / 100 + '.00');
   $('#total-donation-cost').text('$' + totalCost / 100 + '.00');
+  $('#total-tickets').val(totalTickets);
 }
 
 $(document).ready(function() {
@@ -167,4 +154,41 @@ $(document).ready(function() {
     ticketsSelected = tempTicketsSelected;
     updateTotal();
   });
+  $("#donate-now-button").click(function() {
+    event.preventDefault();
+    if(!$('#donate-first').val() && !$('#donate-last').val() &&
+       !$('#donate-address').val() && !$('#donate-postal').val() &&
+       !$('#donate-phone').val() && !$('#donate-email').val()) {
+      $("#error-message-field").text('You must complete all form fields.');
+      return;
+    }
+    if($('#donate-first').val().trim() == '' && $('#donate-last').val().trim() == '' &&
+       $('#donate-address').val().trim() == '' && $('#donate-postal').val().trim() == '' &&
+       $('#donate-phone').val().trim() == '' && $('#donate-email').val().trim() == '') {
+      $("#error-message-field").text('You must complete all form fields.');
+      return;
+    }
+    stripe.createToken(card).then(function(result) {
+      if (result.error) {
+        // Inform the user if there was an error
+        var errorElement = document.getElementById('card-errors');
+        errorElement.textContent = result.error.message;
+      } else {
+        // Send the token to your server
+        stripeTokenHandler(result.token);
+      }
+    });
+  });
+  donationRef.on('value', function(snapshot) {
+    var donations = snapshot.val();
+    console.log(donations);
+    var totalDonations = 0;
+    for(var i=0; i<donations.length; i++) {
+      totalDonations += donations[i].donation;
+    }
+    var donationPercentage = Math.round((totalDonations / donationGoal) * 100);
+    $('donation-amount').text(Math.round(totalDonations / 100).toString());
+    $('donation-progress').css('width', donationPercentage.toString() + '%');
+  });
+  $('donation-goal').text(Math.round(donationGoal / 100).toString());
 });

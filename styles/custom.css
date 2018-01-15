@@ -2,6 +2,10 @@
     font-family: 'Yellowtail', cursive;
 }
 
+.head .container {
+    background: linear-gradient(270deg, rgba(255,193,193,.64), rgba(158,0,0,.64));
+}
+
 .gw-btn {
     background-color: #434343;
     border: 1px solid #434343;
@@ -26,6 +30,14 @@
     font-style: italic;
 }
 
+.campaign-card .category span {
+    background-color: #E43A3A;
+}
+
+.shop-card .category span {
+    background-color: #E43A3A;
+}
+
 .counter-title h4 {
     color: #C4C4C4;
     font-family: 'Montserrat', sans-serif;
@@ -34,10 +46,6 @@
 
 .content-section {
     padding: 30px;
-}
-
-.oneils-logo {
-    padding-top: 20px;
 }
 
 .campaign-card .campaign-info {
@@ -57,6 +65,10 @@
     font-weight: normal;
 }
 
+.progress-bar span {
+    background: linear-gradient(270deg, rgba(228,58,58,1), rgba(114,29,29,1));
+}
+
 #donate-now, #donate-form-wrap {
     background: #ffffff;
     border-radius: 5px;
@@ -73,6 +85,12 @@
     width: 100%;
     padding: 10px 0;
 }
+
+#donate-now-button:hover {
+    background: #434343;
+    color: white;
+}
+
 .form-control.ticket-input {
     border-top: 1px solid #C4C4C4;
     border-right: 1px solid #C4C4C4;
@@ -86,6 +104,15 @@
 
 .donate-input.required {
     border: 1px solid #C4C4C4;
+}
+
+.shop-card .card-footer a:hover {
+    color: #E43A3A;
+}
+
+.shop-card .card-footer .link-left {
+    background-image: linear-gradient(270deg, rgba(114,29,29,1), rgba(228,58,58,1));
+    background-color: #E43A3A;
 }
 
 #basic-addon2 {
@@ -126,10 +153,34 @@
   }
   
   .StripeElement--invalid {
-    border-color: #fa755a;
+    border-color: #E43A3A;
   }
   
   .StripeElement--webkit-autofill {
     background-color: #fefde5 !important;
   }
+
+  #main-sponsor-rawfit {
+    width: 150px;
+  }
+  #main-sponsor-daydream {
+    width: 200px;
+  }
+
+  .sponsor-image {
+      width: 100%;
+      padding: 0 20px;
+  }
+
+  #donation-progress {
+      width: 0%;
+  }
   
+  @media screen and (max-width: 520px) {
+      #main-sponsor-rawfit {
+        width: 100px;
+      }
+      #main-sponsor-daydream {
+        width: 150px;
+      }
+  }

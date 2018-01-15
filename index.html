@@ -61,23 +61,23 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-md-3 col-sm-6 col-xs-6 counter-title">
+				<div class="col-md-3 col-sm-12 col-xs-12 counter-title">
 					<h3>Together, we can make a difference.</h3>
 					<h4>Sponsored By</h4>
 				</div>
 
-				<div class="col-md-3 col-sm-6 col-xs-6 counter-box">
-					<img src="images/rawfit.png" alt="Raw Fit" width="250"/>
+				<div class="col-md-3 col-sm-5 col-xs-5 counter-box">
+					<img id="main-sponsor-rawfit" src="images/rawfit.png" alt="Raw Fit" width="150"/>
 				</div> <!-- end counter-box -->
 
-				<div class="col-md-3 col-sm-6 col-xs-6 counter-box">
+				<div class="col-md-3 col-sm-2 col-xs-2 counter-box">
 					<div class="count-info">
 						<h3>&</h3>
 					</div> <!-- end count-info -->
 				</div> <!-- end counter-box -->
 
-				<div class="col-md-3 col-sm-6 col-xs-6 counter-box">
-					<img class="oneils-logo" src="images/oneils.png" alt="Oneils Pub" width="276"/>
+				<div class="col-md-3 col-sm-5 col-xs-5 counter-box">
+					<img id="main-sponsor-daydream" src="images/daydream.svg" alt="Daydream Development"/>
 				</div> <!-- end counter-box -->
 
 			</div> <!-- end row -->
@@ -107,8 +107,8 @@
 						</div> <!-- end campaign-info -->
 
 						<div class="campaign-status">
-							<div class="progress-bar"><span style="width: 50%;background-color:#27ae60"></span></div>
-							<p>$2,000.00 of $4,000.00 raised</p>
+							<div class="progress-bar"><span id="donation-progress"></span></div>
+							<p><span id="donation-amount">$0,000.00</span> of <span id="donation-goal">$0,000.00</span> raised</p>
 						</div> <!-- end campaign-status -->
 						<div class="clearfix"></div>
 					</div> <!-- end campaign-card -->
@@ -210,13 +210,13 @@
 													
 													<div class="input-group">
 														<span class="input-group-addon" id="basic-addon1"># of tickets</span>
-														<input type="text" class="form-control ticket-input" placeholder="Enter Amount" value="10">
+														<input id="total-tickets" type="text" class="form-control ticket-input" placeholder="Enter Amount" value="0" readonly>
 													</div> <!-- end input-group -->
 												</div> <!-- end donate-total-wrap -->
 												<div class="col-md-6 col-xs-12 donate-total-wrap">
 													
 														<div class="input-group">
-															<input id="ticket-total-price" type="text" class="form-control type-input" placeholder="Enter Amount" value="$0.00">
+															<input id="ticket-total-price" type="text" class="form-control type-input" placeholder="Enter Amount" value="$0.00" readonly>
 															<span class="input-group-addon" id="basic-addon2">Total Amount</span>
 														</div> <!-- end input-group -->
 													</div> <!-- end donate-total-wrap -->
@@ -256,6 +256,13 @@
 					<h3 class="underline">Community Sponsors</h3>
 				</header>
 			</div> <!-- end row -->
+			<div class="row">
+				{% for sponsor in site.data.sponsors %}
+					<div class="col-md-2 col-sm-4 col-xs-6">
+						<img class="sponsor-image" src="{{ sponsor.image }}" alt="{{ sponsor.name }}" />
+					</div>
+				{% endfor %}
+			</div>
 		</div> <!-- end container -->
 	</footer>
 
@@ -294,6 +301,20 @@
 	<script src="scripts/plugins.js"></script>
 
 	<script src="scripts/main.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+	<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyDKSRld4eB2YSbMnhy5bySS_8OMAY97Rp4",
+		authDomain: "valentine-baldwin.firebaseapp.com",
+		databaseURL: "https://valentine-baldwin.firebaseio.com",
+		projectId: "valentine-baldwin",
+		storageBucket: "valentine-baldwin.appspot.com",
+		messagingSenderId: "847735353038"
+	};
+	firebase.initializeApp(config);
+	</script>
 
 	<script src="scripts/custom.js"></script>
 </body>
