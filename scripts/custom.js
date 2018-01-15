@@ -53,7 +53,7 @@ function stripeTokenHandler(token) {
   }
   $.ajax({
     type: 'POST',
-    url: 'url',
+    url: 'https://us-central1-valentine-baldwin.cloudfunctions.net/saveEntry',
     data: data,
     success: function() { console.log('Data saved to DB') },
     dataType: 'json'
