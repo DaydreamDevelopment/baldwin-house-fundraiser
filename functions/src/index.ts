@@ -32,11 +32,9 @@ const tenTicketPrice = 5000;
         }
         try {
             // Create the customer in Stripe
-            const customer = await stripe.customers.create({email: req.body.email});
-            // Create a source to charge the user with
-            const source = await stripe.customers.createSource(customer.id, {source: req.body.token});
+            const customer = await stripe.customers.create({description: 'Baldwin donation customer: ' + req.body.email, source: req.body.token});
             // Create a charge on the users source
-            const charge = await stripe.charges.create({amount: parseInt(req.body.donation), currency: 'cad', customer: source.customer});
+            const charge = await stripe.charges.create({amount: parseInt(req.body.donation), currency: 'cad', customer: customer.id});
             
             // Save data to database
             await donationDB.set({

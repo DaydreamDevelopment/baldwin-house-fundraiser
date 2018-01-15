@@ -37,11 +37,9 @@ exports.saveEntry = functions.https.onRequest((req, res) => {
         }
         try {
             // Create the customer in Stripe
-            const customer = yield stripe.customers.create({ email: req.body.email });
-            // Create a source to charge the user with
-            const source = yield stripe.customers.createSource(customer.id, { source: req.body.token });
+            const customer = yield stripe.customers.create({ description: 'Baldwin donation customer: ' + req.body.email, source: req.body.token });
             // Create a charge on the users source
-            const charge = yield stripe.charges.create({ amount: parseInt(req.body.donation), currency: 'cad', customer: source.customer });
+            const charge = yield stripe.charges.create({ amount: parseInt(req.body.donation), currency: 'cad', customer: customer.id });
             // Save data to database
             yield donationDB.set({
                 customer: customer,
