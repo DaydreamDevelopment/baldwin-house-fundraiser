@@ -97,7 +97,7 @@ function updateTotal() {
 
 $(document).ready(function() {
   $(".link-left").click(function(event) {
-    event.preventDefault();
+    event.preventDefault ? event.preventDefault() : (event.returnValue = false);
     var spanId = event.target.id.replace("add", "count");
     var ticketId = event.target.id.replace("add-", "");
     console.log(ticketId);
@@ -122,7 +122,7 @@ $(document).ready(function() {
     updateTotal();
   });
   $(".link-right").click(function(event) {
-    event.preventDefault();
+    event.preventDefault ? event.preventDefault() : (event.returnValue = false);
     var tempTicketsSelected = [];
     var spanId = event.target.id.replace("remove", "count");
     var ticketId = event.target.id.replace("remove-", "");

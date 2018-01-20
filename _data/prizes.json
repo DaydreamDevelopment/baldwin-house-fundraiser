@@ -89,5 +89,33 @@
         "image": "http://placehold.it/1080x718?text=product-img-3",
         "description": "",
         "value": "$45"
+    },
+    {
+        "id": "heather-party-tent",
+        "title": "Party Tent Rental",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "",
+        "value": "$315"
+    },
+    {
+        "id": "kathryn-zumba",
+        "title": "Free Zumba Classes",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "",
+        "value": "$100"
+    },
+    {
+        "id": "love-yoga",
+        "title": "Yoga Class",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "",
+        "value": "$50"
+    },
+    {
+        "id": "erica-spin",
+        "title": "1 Month Spin Membership",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "",
+        "value": "$100"
     }
 ]
