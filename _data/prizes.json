@@ -1,23 +1,86 @@
 [
     {
-        "id": "daydream-website",
-        "title": "One Page Website",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
-        "description": "A one page website to get your business an online presence or modernize your existing business website.",
-        "value": "$1500"
-    },
-    {
         "id": "rawfit-membership",
-        "title": "1 Year Gym Membership",
+        "title": "4 Month Gym Membership",
         "image": "http://placehold.it/1080x718?text=product-img-3",
-        "description": "A one year gym access membership.",
-        "value": "$384"
+        "description": "",
+        "value": "$128"
     },
     {
-        "id": "rawfit-rodan-fields",
-        "title": "Microdermabrasion Paste",
+        "id": "daydream-website",
+        "title": "Logo Design Package",
         "image": "http://placehold.it/1080x718?text=product-img-3",
-        "description": "A Rodan Fields microdermabrasion paste.",
-        "value": "$105"
+        "description": "",
+        "value": "$300"
+    },
+    {
+        "id": "rawfit-bangle",
+        "title": "Kate Spade Bangle",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "",
+        "value": "$85"
+    },
+    {
+        "id": "farren-gift-card",
+        "title": "Farren Footwear Gift Card",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "",
+        "value": "$25"
+    },
+    {
+        "id": "kings-gift-card",
+        "title": "Kings and Little Ones Gift Card",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "",
+        "value": "$25"
+    },
+    {
+        "id": "amanda-gift-basket",
+        "title": "Makeup Gift Basket",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "",
+        "value": "$140"
+    },
+    {
+        "id": "marissa-manicure",
+        "title": "Free Manicure",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "",
+        "value": "$25"
+    },
+    {
+        "id": "pommier-necklace",
+        "title": "Silver Necklace",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "",
+        "value": "$112"
+    },
+    {
+        "id": "emard-saw",
+        "title": "Porter Cable Jigsaw",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "",
+        "value": "$70"
+    },
+    {
+        "id": "rawfit-purse",
+        "title": "Leather Purse",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "",
+        "value": "$80"
+    },
+    {
+        "id": "robertson-hair",
+        "title": "Robertson Hair Products",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "",
+        "value": "$70"
+    },
+    {
+        "id": "spinecare-gift-basket",
+        "title": "Health & Wellness Gift Basket",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "",
+        "value": "$150"
     }
 ]
