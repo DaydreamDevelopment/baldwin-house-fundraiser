@@ -82,5 +82,12 @@
         "image": "http://placehold.it/1080x718?text=product-img-3",
         "description": "",
         "value": "$150"
+    },
+    {
+        "id": "karen-cake",
+        "title": "Reeses Peanut Butter Cake",
+        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "description": "",
+        "value": "$45"
     }
 ]
