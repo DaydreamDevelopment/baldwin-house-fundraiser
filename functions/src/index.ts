@@ -9,9 +9,7 @@ const stripe = stripePackage(functions.config().stripe.testkey);
 const donationDB = admin.database().ref('donations');
 const corsAllowed = cors({ origin: true });
 
-const singleTicketPrice = 1000;
-const fiveTicketPrice = 3000;
-const tenTicketPrice = 5000;
+const singleTicketPrice = 500;
 
  // Charge and save an entry
  export const saveEntry = functions.https.onRequest((req, res) => {
@@ -27,7 +25,7 @@ const tenTicketPrice = 5000;
         if(!req.body.tickets || req.body.tickets.length < 0) {
             return res.send('No tickets were sent');
         }
-        if(parseInt(req.body.donation) !== getTotal(req.body.tickets, singleTicketPrice, fiveTicketPrice, tenTicketPrice)) {
+        if(parseInt(req.body.donation) !== getTotal(req.body.tickets, singleTicketPrice)) {
             return res.send('Donation amount does not match number of tickets');
         }
         try {
@@ -57,34 +55,15 @@ const tenTicketPrice = 5000;
     });
  });
 
- function getTotal(ticketsSelected, ticketPrice, ticketPriceFive, ticketPriceTen) {
+ function getTotal(ticketsSelected, ticketPrice) {
     let totalCost = 0;
     let totalTickets = 0;
   
     for(const ticket of ticketsSelected) {
       totalTickets += parseInt(ticket.count);
     }  
-
-    if(totalTickets >= 10) {
-      totalCost += Math.floor(totalTickets / 10) * ticketPriceTen;
-      const remainingTicketsTen = totalTickets % 10;
-      if(remainingTicketsTen >= 5) {
-        totalCost += Math.floor(remainingTicketsTen / 5) * ticketPriceFive;
-        const remainingTicketsFive = remainingTicketsTen % 5;
-        totalCost += remainingTicketsFive * ticketPrice;
-      }
-      else {
-        totalCost += remainingTicketsTen * ticketPrice;
-      }
-    }
-    else if(totalTickets >= 5) {
-      totalCost += Math.floor(totalTickets / 5) * ticketPriceFive;
-      const remainingTicketsFive = totalTickets % 5;
-      totalCost += remainingTicketsFive * ticketPrice;
-    }
-    else {
-      totalCost += totalTickets * ticketPrice;
-    }
+    
+    totalCost += totalTickets * ticketPrice;
 
     return totalCost;
   }

@@ -74,9 +74,7 @@ function stripeTokenHandler(token) {
 }
 
 var ticketsSelected = [];
-var ticketPrice = 1000;
-var ticketPriceFive = 3000;
-var ticketPriceTen = 5000;
+var ticketPrice = 500;
 var totalDonation = 0;
 var donationRef = firebase.database().ref('donations');
 var donationGoal = 400000;
@@ -88,27 +86,8 @@ function updateTotal() {
   for(var i=0; i<ticketsSelected.length; i++) {
     totalTickets += ticketsSelected[i].count;
   }  
-
-  if(totalTickets >= 10) {
-    totalCost += Math.floor(totalTickets / 10) * ticketPriceTen;
-    var remainingTicketsTen = totalTickets % 10;
-    if(remainingTicketsTen >= 5) {
-      totalCost += Math.floor(remainingTicketsTen / 5) * ticketPriceFive;
-      var remainingTicketsFive = remainingTicketsTen % 5;
-      totalCost += remainingTicketsFive * ticketPrice;
-    }
-    else {
-      totalCost += remainingTicketsTen * ticketPrice;
-    }
-  }
-  else if(totalTickets >= 5) {
-    totalCost += Math.floor(totalTickets / 5) * ticketPriceFive;
-    var remainingTicketsFive = totalTickets % 5;
-    totalCost += remainingTicketsFive * ticketPrice;
-  }
-  else {
-    totalCost += totalTickets * ticketPrice;
-  }
+    
+  totalCost += totalTickets * ticketPrice;
 
   totalDonation = totalCost;
   $('#ticket-total-price').val('$' + totalCost / 100 + '.00');
