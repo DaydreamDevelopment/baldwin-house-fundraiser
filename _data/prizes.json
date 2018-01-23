@@ -53,7 +53,7 @@
         "image": "images/prizes/manicure.jpg",
         "description": "",
         "value": "$25",
-        "doner": ""
+        "doner": "Marissa Kyte"
     },
     {
         "id": "pommier-necklace",
@@ -81,11 +81,11 @@
     },
     {
         "id": "robertson-hair",
-        "title": "Robertson Hair Products",
+        "title": "Hair Products",
         "image": "images/prizes/shampoo.jpg",
         "description": "",
         "value": "$70",
-        "doner": ""
+        "doner": "Natalie Robertson"
     },
     {
         "id": "spinecare-gift-basket",
@@ -93,7 +93,7 @@
         "image": "images/prizes/spinecare.jpg",
         "description": "",
         "value": "$150",
-        "doner": ""
+        "doner": "Cornwall Spine Care Plus"
     },
     {
         "id": "karen-cake",
@@ -109,15 +109,15 @@
         "image": "images/prizes/tent.jpg",
         "description": "",
         "value": "$315",
-        "doner": ""
+        "doner": "Heather & Jason Crites"
     },
     {
         "id": "kathryn-zumba",
         "title": "Free Zumba Classes",
         "image": "images/prizes/zumba.jpg",
         "description": "",
-        "value": "$100",
-        "doner": ""
+        "value": "$50",
+        "doner": "Catherine Seguin"
     },
     {
         "id": "love-yoga",
@@ -125,7 +125,7 @@
         "image": "images/prizes/bracelet-love.jpg",
         "description": "",
         "value": "$50",
-        "doner": ""
+        "doner": "Paula McDermott"
     },
     {
         "id": "erica-spin",
@@ -141,6 +141,6 @@
         "image": "images/prizes/moodstruck.jpg",
         "description": "",
         "value": "$35",
-        "doner": ""
+        "doner": "Jenn Kieth"
     }
 ]
