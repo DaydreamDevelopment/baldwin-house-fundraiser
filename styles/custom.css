@@ -38,6 +38,10 @@
     background-color: #E43A3A;
 }
 
+.shop-card img {
+    margin:0 auto;
+}
+
 .counter-title h4 {
     color: #C4C4C4;
     font-family: 'Montserrat', sans-serif;
@@ -197,4 +201,31 @@
       #main-sponsor-daydream {
         width: 150px;
       }
+  }
+
+  .category span {
+    font-size: 16px;
+    font-weight: 800;
+  }
+
+  .doner {
+      font-weight: 800;
+  }
+
+  .courtesy {
+      margin-bottom: 0; 
+  }
+  
+  .footer {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      text-align: center;
+  }
+
+  footer a {
+      font-weight: 800;
+  }
+
+  footer p {
+      margin-bottom: 0;
   }

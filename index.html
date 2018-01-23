@@ -130,7 +130,8 @@
 			</div> <!-- end row -->
 			<div class="row">
 				{% for prize in site.data.prizes %}
-					<div class="col-md-3 col-sm-6">
+					{% capture thecycle %}{% cycle 'one', 'two', 'three', 'four' %}{% endcapture %}
+					<div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="shop-card">
 							<img src="{{ prize.image }}" alt="" class="img-responsive">
 							<div class="shop-info">
@@ -139,19 +140,26 @@
 									<span>Tickets: <span id="count-{{ prize.id }}">0</span></span>
 								</div> <!-- end category -->
 							</div> <!-- end shop-info -->
-
+							<p class="courtesy">Courtesy of:</p>
+							<p class="doner">{{ prize.doner }}</p>
 							<div class="shop-status">
 								<p class="pt1">Estimated Value: {{ prize.value }}</p>
 							</div> <!-- end shop-status -->
-
 							<div class="card-footer">
 								<a id="add-{{ prize.id }}" href="" class="link-left">Add Ticket</a>
 								<a id="remove-{{ prize.id }}" href="" class="link-right">Remove</a>
 							</div> <!-- end card-footer -->
-
-							<div class="clearfix"></div>
 						</div> <!-- end shop-card -->
 					</div>
+					{% if thecycle == 'four' %}
+						<div class="clearfix visible-md-block"></div>
+						<div class="clearfix visible-lg-block"></div>
+						<div class="clearfix visible-sm-block"></div>
+					{% else %}
+						{% if thecycle == 'two' %}
+							<div class="clearfix visible-sm-block"></div>
+						{% endif %}
+					{% endif %}
 				{% endfor %}
 			</div> <!-- end row -->
 		</div> <!-- end container -->
@@ -171,7 +179,7 @@
 			
 						<div id="donate-form-wrap" class="donate-form-wrap">
 								<div id="donate_purchase_form_wrap">
-									<legend class="underline">Personal Info<span class="payment-help"> (Used to send donation receipt)</span></legend>
+									<legend class="underline">Personal Info<span class="payment-help"> (Used to send prize information)</span></legend>
 									<div class="row">
 										<div class="col-sm-6 col-xs-12">
 												<input class="donate-input required"
@@ -257,10 +265,14 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="row">
+				<!--
 				<header class="section-header text-center col-md-8 col-md-offset-2">
 					<h3 class="underline">Community Sponsors</h3>
 				</header>
+				-->
+				<p>© 2018 - Developed by: <a href="https://daydreamdev.com" target="_blank">Daydream Development</a></p>
 			</div> <!-- end row -->
+			<!--
 			<div class="row">
 				{% for sponsor in site.data.sponsors %}
 					<div class="col-md-2 col-sm-4 col-xs-6">
@@ -268,6 +280,7 @@
 					</div>
 				{% endfor %}
 			</div>
+			-->
 		</div> <!-- end container -->
 	</footer>
 

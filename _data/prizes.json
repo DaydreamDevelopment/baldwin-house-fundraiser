@@ -2,120 +2,145 @@
     {
         "id": "rawfit-membership",
         "title": "4 Month Gym Membership",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "image": "images/prizes/rawfit.jpg",
         "description": "",
-        "value": "$128"
+        "value": "$128",
+        "doner": "Rawfit"
     },
     {
         "id": "daydream-website",
         "title": "Logo Design Package",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "image": "images/prizes/logo.jpg",
         "description": "",
-        "value": "$300"
+        "value": "$300",
+        "doner": "Daydream"
     },
     {
         "id": "rawfit-bangle",
         "title": "Kate Spade Bangle",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "image": "images/prizes/bangle.jpg",
         "description": "",
-        "value": "$85"
+        "value": "$85",
+        "doner": "Rawft"
     },
     {
         "id": "farren-gift-card",
-        "title": "Farren Footwear Gift Card",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "title": "Gift Card",
+        "image": "images/prizes/farran.jpg",
         "description": "",
-        "value": "$25"
+        "value": "$25",
+        "doner": "Farran Footwear"
     },
     {
         "id": "kings-gift-card",
-        "title": "Kings and Little Ones Gift Card",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "title": "Gift Card",
+        "image": "images/prizes/kings.jpg",
         "description": "",
-        "value": "$25"
+        "value": "$25",
+        "doner": "Kings and Little Ones"
     },
     {
         "id": "amanda-gift-basket",
         "title": "Makeup Gift Basket",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "image": "images/prizes/basket.jpg",
         "description": "",
-        "value": "$140"
+        "value": "$140",
+        "doner": "Amanda McCosham"
     },
     {
         "id": "marissa-manicure",
         "title": "Free Manicure",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "image": "images/prizes/manicure.jpg",
         "description": "",
-        "value": "$25"
+        "value": "$25",
+        "doner": ""
     },
     {
         "id": "pommier-necklace",
-        "title": "Silver Necklace",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "title": "Rose Gold Necklace",
+        "image": "images/prizes/necklace.jpg",
         "description": "",
-        "value": "$112"
+        "value": "$125",
+        "doner": "Pommier Jewelers"
     },
     {
         "id": "emard-saw",
         "title": "Porter Cable Jigsaw",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "image": "images/prizes/jigsaw.jpg",
         "description": "",
-        "value": "$70"
+        "value": "$70",
+        "doner": "Emard Lumber"
     },
     {
         "id": "rawfit-purse",
         "title": "Leather Purse",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "image": "images/prizes/leatherbag.jpg",
         "description": "",
-        "value": "$80"
+        "value": "$80",
+        "doner": "Rawfit"
     },
     {
         "id": "robertson-hair",
         "title": "Robertson Hair Products",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "image": "images/prizes/shampoo.jpg",
         "description": "",
-        "value": "$70"
+        "value": "$70",
+        "doner": ""
     },
     {
         "id": "spinecare-gift-basket",
-        "title": "Health & Wellness Gift Basket",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "title": "Health Gift Basket",
+        "image": "images/prizes/spinecare.jpg",
         "description": "",
-        "value": "$150"
+        "value": "$150",
+        "doner": ""
     },
     {
         "id": "karen-cake",
-        "title": "Reeses Peanut Butter Cake",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "title": "Reeses Cake",
+        "image": "images/prizes/cake.jpg",
         "description": "",
-        "value": "$45"
+        "value": "$45",
+        "doner": "Karen McManus"
     },
     {
         "id": "heather-party-tent",
         "title": "Party Tent Rental",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "image": "images/prizes/tent.jpg",
         "description": "",
-        "value": "$315"
+        "value": "$315",
+        "doner": ""
     },
     {
         "id": "kathryn-zumba",
         "title": "Free Zumba Classes",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "image": "images/prizes/zumba.jpg",
         "description": "",
-        "value": "$100"
+        "value": "$100",
+        "doner": ""
     },
     {
         "id": "love-yoga",
-        "title": "Yoga Class",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "title": "Custom Mala Bracelets",
+        "image": "images/prizes/bracelet-love.jpg",
         "description": "",
-        "value": "$50"
+        "value": "$50",
+        "doner": ""
     },
     {
         "id": "erica-spin",
-        "title": "1 Month Spin Membership",
-        "image": "http://placehold.it/1080x718?text=product-img-3",
+        "title": "1 Month Spin",
+        "image": "images/prizes/spin.jpg",
         "description": "",
-        "value": "$100"
+        "value": "$100",
+        "doner": ""
+    },
+    {
+        "id": "jen-younique",
+        "title": "Younique Gift Card",
+        "image": "images/prizes/moodstruck.jpg",
+        "description": "",
+        "value": "$35",
+        "doner": ""
     }
 ]
