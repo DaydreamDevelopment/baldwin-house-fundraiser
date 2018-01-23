@@ -5,7 +5,7 @@ import * as admin from 'firebase-admin';
 
 admin.initializeApp(functions.config().firebase);
 
-const stripe = stripePackage(functions.config().stripe.testkey);
+const stripe = stripePackage(functions.config().stripe.livekey);
 const donationDB = admin.database().ref('donations');
 const corsAllowed = cors({ origin: true });
 
