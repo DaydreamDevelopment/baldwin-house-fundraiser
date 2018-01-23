@@ -142,5 +142,13 @@
         "description": "",
         "value": "$35",
         "doner": "Jenn Kieth"
+    },
+    {
+        "id": "source-wood",
+        "title": "Custom Wood Cutting Board",
+        "image": "images/prizes/wood.jpg",
+        "description": "",
+        "value": "$60",
+        "doner": "Source Woods"
     }
 ]

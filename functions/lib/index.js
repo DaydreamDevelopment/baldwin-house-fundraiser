@@ -13,7 +13,7 @@ const stripePackage = require("stripe");
 const cors = require("cors");
 const admin = require("firebase-admin");
 admin.initializeApp(functions.config().firebase);
-const stripe = stripePackage(functions.config().stripe.testkey);
+const stripe = stripePackage(functions.config().stripe.livekey);
 const donationDB = admin.database().ref('donations');
 const corsAllowed = cors({ origin: true });
 const singleTicketPrice = 500;
