@@ -59,7 +59,7 @@ function stripeTokenHandler(token) {
     success: function() { 
       $.LoadingOverlay("hide"); 
       $("#success-message-field").show();
-      $("#success-message-field").text('Thank you for your donation! Your tickets have been entered for the draw and you will receive a donation receipt by email or mail.'); 
+      $("#success-message-field").text('Thank you for your donation. Your tickets have been entered for the draw and you will be contacted if you win anything!'); 
       setTimeout(function(){
         $("#success-message-field").hide();
       }, 20000);
