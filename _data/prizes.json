@@ -101,7 +101,7 @@
         "image": "images/prizes/cake.jpg",
         "description": "",
         "value": "$45",
-        "doner": "Karen McManus"
+        "doner": "Karen McManus (Nutcracker's)"
     },
     {
         "id": "heather-party-tent",
@@ -133,7 +133,7 @@
         "image": "images/prizes/spin.jpg",
         "description": "",
         "value": "$100",
-        "doner": ""
+        "doner": "Erica's Spin Studio"
     },
     {
         "id": "jen-younique",
