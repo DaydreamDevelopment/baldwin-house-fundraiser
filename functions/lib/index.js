@@ -51,7 +51,7 @@ exports.saveEntry = functions.https.onRequest((req, res) => {
                 postalCode: req.body.postalCode
             });
             // Send back response
-            return res.send("Success");
+            return res.send({ "status": "Success" });
         }
         catch (err) {
             return res.status(500).send(err);

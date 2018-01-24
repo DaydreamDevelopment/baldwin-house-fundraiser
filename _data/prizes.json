@@ -158,5 +158,21 @@
         "description": "",
         "value": "$30",
         "doner": "RawFit"
+    },
+    {
+        "id": "own-the-ice",
+        "title": "Gift Certificate",
+        "image": "images/prizes/ownice.jpg",
+        "description": "",
+        "value": "$50",
+        "doner": "Brock & Melissa McBride"
+    },
+    {
+        "id": "colts-tickets",
+        "title": "6 Colts Game Tickets",
+        "image": "images/prizes/colts.jpg",
+        "description": "",
+        "value": "$72",
+        "doner": "Brock & Melissa McBride"
     }
 ]
