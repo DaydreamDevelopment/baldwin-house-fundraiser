@@ -17,16 +17,16 @@ const singleTicketPrice = 500;
         
         // Verify cost is correct
         if(!req.body.email && !req.body.phone && !req.body.firstName && !req.body.lastName && !req.body.address && !req.body.postalCode) {
-            return res.send('Missing form value');
+            return res.status(400).send('Missing form value');
         }
         if(!req.body.token) {
-            return res.send('Missing token value');
+            return res.status(400).send('Missing token value');
         }
         if(!req.body.tickets || req.body.tickets.length < 0) {
-            return res.send('No tickets were sent');
+            return res.status(400).send('No tickets were sent');
         }
         if(parseInt(req.body.donation) !== getTotal(req.body.tickets, singleTicketPrice)) {
-            return res.send('Donation amount does not match number of tickets');
+            return res.status(400).send('Donation amount does not match number of tickets');
         }
         try {
             // Create the customer in Stripe
@@ -50,7 +50,7 @@ const singleTicketPrice = 500;
             // Send back response
             return res.send("Success");
         } catch(err) {
-            return res.send(err);
+            return res.status(500).send(err);
         }
     });
  });
