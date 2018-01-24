@@ -51,25 +51,25 @@ function stripeTokenHandler(token) {
     tickets: ticketsSelected,
     donation: totalDonation
   }
-  console.log(data);
+
   $.ajax({
     type: 'POST',
     url: 'https://us-central1-valentine-baldwin.cloudfunctions.net/saveEntry',
     data: data,
-    success: function() { 
-      $.LoadingOverlay("hide"); 
-      $("#success-message-field").show();
-      $("#success-message-field").text('Thank you for your donation. Your tickets have been entered for the draw and you will be contacted if you win anything!'); 
-      setTimeout(function(){
-        $("#success-message-field").hide();
-      }, 20000);
-    },
-    error: function() { 
-      $.LoadingOverlay("hide"); 
-      $("#error-message-field").text('There was an error.');
-      $("#error-message-field").show();
-    },
     dataType: 'json'
+  })
+  .done(function() {
+    $.LoadingOverlay("hide"); 
+    $("#success-message-field").show();
+    $("#success-message-field").text('Thank you for your donation. Your tickets have been entered for the draw and you will be contacted if you win anything!'); 
+    setTimeout(function(){
+      $("#success-message-field").hide();
+    }, 20000);
+  })
+  .fail(function() {
+    $.LoadingOverlay("hide"); 
+    $("#error-message-field").text('There was an error.');
+    $("#error-message-field").show();
   });
 }
 

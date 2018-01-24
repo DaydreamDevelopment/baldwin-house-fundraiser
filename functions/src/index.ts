@@ -48,7 +48,7 @@ const singleTicketPrice = 500;
             });
 
             // Send back response
-            return res.send("Success");
+            return res.send({"status": "Success"});
         } catch(err) {
             return res.status(500).send(err);
         }
