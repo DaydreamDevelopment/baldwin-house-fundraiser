@@ -21,7 +21,7 @@
         "image": "images/prizes/bangle.jpg",
         "description": "",
         "value": "$85",
-        "doner": "Rawft"
+        "doner": "Rawfit"
     },
     {
         "id": "farren-gift-card",
@@ -150,5 +150,13 @@
         "description": "",
         "value": "$60",
         "doner": "Source Woods"
+    },
+    {
+        "id": "rawfit-tanner",
+        "title": "Sunless Tanner",
+        "image": "images/prizes/tanner.jpg",
+        "description": "",
+        "value": "$30",
+        "doner": "RawFit"
     }
 ]
