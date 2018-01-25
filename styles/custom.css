@@ -131,18 +131,73 @@
 .footer {
     padding: 30px;
     background: #434343;
-    text-align: center;
 }
 
 #total-donation-cost {
     font-weight: bold;
 }
 
-#error-message-field {
-    color: red;
-    font-size: 20px;
-}
-
-.status-text {
-    text-align: center;
-}
+#main-sponsor-rawfit {		
+       width: 150px;		
+     }		
+     #main-sponsor-daydream {		
+       width: 230px;		
+     }		
+    		
+     .sponsor-image {		
+         width: 100%;		
+         padding: 0 20px;		
+     }		
+    	
+     #donation-progress {		
+         width: 0%;		
+     }		
+    	
+     #error-message-field {		
+         color: red;		 
+    }
+     #sucess-message-field {		
+       color: green;		
+     }		
+               
+     .status-text {		
+        text-align: center;		     
+       font-size: 25px;		 
+       font-weight: bold;		
+     }		
+     		
+     @media screen and (max-width: 520px) {		
+         #main-sponsor-rawfit {		
+           width: 100px;		
+         }		
+         #main-sponsor-daydream {		
+           width: 150px;		
+         }		
+     }		
+    		
+     .category span {		
+       font-size: 16px;		
+       font-weight: 800;		
+     }		
+    		
+     .doner {		
+         font-weight: 800;		
+     }		
+    		
+     .courtesy {		
+         margin-bottom: 0; 		
+     }		
+     		
+     .footer {		
+         padding-top: 15px;		
+         padding-bottom: 15px;		
+         text-align: center;		
+     }		
+    		
+     footer a {		
+         font-weight: 800;		
+     }		
+    		
+     footer p {		
+         margin-bottom: 0;		
+     } 
