@@ -48,7 +48,8 @@ exports.saveEntry = functions.https.onRequest((req, res) => {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 address: req.body.address,
-                postalCode: req.body.postalCode
+                postalCode: req.body.postalCode,
+                tickets: req.body.tickets
             });
             // Send back response
             return res.send({ "status": "Success" });
