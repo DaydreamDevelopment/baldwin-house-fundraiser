@@ -131,101 +131,18 @@
 .footer {
     padding: 30px;
     background: #434343;
+    text-align: center;
 }
 
 #total-donation-cost {
     font-weight: bold;
 }
 
-/**
- * The CSS shown here will not be introduced in the Quickstart guide, but shows
- * how you can use CSS to style your Element's container.
- */
- .StripeElement {
-    background-color: white;
-    height: 40px;
-    padding: 10px 12px;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    box-shadow: 0 1px 3px 0 #e6ebf1;
-    -webkit-transition: box-shadow 150ms ease;
-    transition: box-shadow 150ms ease;
-  }
-  
-  .StripeElement--focus {
-    box-shadow: 0 1px 3px 0 #cfd7df;
-  }
-  
-  .StripeElement--invalid {
-    border-color: #E43A3A;
-  }
-  
-  .StripeElement--webkit-autofill {
-    background-color: #fefde5 !important;
-  }
-
-  #main-sponsor-rawfit {
-    width: 150px;
-  }
-  #main-sponsor-daydream {
-    width: 230px;
-  }
-
-  .sponsor-image {
-      width: 100%;
-      padding: 0 20px;
-  }
-
-  #donation-progress {
-      width: 0%;
-  }
-
-  #error-message-field {
+#error-message-field {
     color: red;
-  }
+    font-size: 20px;
+}
 
-  #sucess-message-field {
-    color: green;
-  }
-
-  .status-text {
+.status-text {
     text-align: center;
-    font-size: 25px;
-    font-weight: bold;
-  }
-  
-  @media screen and (max-width: 520px) {
-      #main-sponsor-rawfit {
-        width: 100px;
-      }
-      #main-sponsor-daydream {
-        width: 150px;
-      }
-  }
-
-  .category span {
-    font-size: 16px;
-    font-weight: 800;
-  }
-
-  .doner {
-      font-weight: 800;
-  }
-
-  .courtesy {
-      margin-bottom: 0; 
-  }
-  
-  .footer {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      text-align: center;
-  }
-
-  footer a {
-      font-weight: 800;
-  }
-
-  footer p {
-      margin-bottom: 0;
-  }
+}
