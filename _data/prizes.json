@@ -28,7 +28,7 @@
         "title": "Gift Card",
         "image": "images/prizes/farran.jpg",
         "description": "",
-        "value": "$25",
+        "value": "$40",
         "doner": "Farran Footwear"
     },
     {
@@ -145,10 +145,10 @@
     },
     {
         "id": "source-wood",
-        "title": "Custom Wood Cutting Board",
+        "title": "Custom Walnut Cutting Boards",
         "image": "images/prizes/wood.jpg",
         "description": "",
-        "value": "$60",
+        "value": "$80",
         "doner": "Source Woods"
     },
     {
@@ -174,5 +174,13 @@
         "description": "",
         "value": "$72",
         "doner": "Brock & Melissa McBride"
+    },
+    {
+        "id": "poppin-pedicure",
+        "title": "Pedicure with Paraffin Wax",
+        "image": "images/prizes/pedicure.jpg",
+        "description": "",
+        "value": "$35",
+        "doner": "Poppin Makeup & More"
     }
 ]
