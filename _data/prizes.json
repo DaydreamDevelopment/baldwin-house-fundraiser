@@ -182,5 +182,13 @@
         "description": "",
         "value": "$35",
         "doner": "Poppin Makeup & More"
+    },
+    {
+        "id": "cineplex-pass",
+        "title": "Cineplex Adult & Child",
+        "image": "images/prizes/cineplex.jpg",
+        "description": "",
+        "value": "$30",
+        "doner": "HomeGeeks- Remax Cornwall Realty Inc."
     }
 ]
