@@ -15,6 +15,7 @@ const admin = require("firebase-admin");
 admin.initializeApp(functions.config().firebase);
 const stripe = stripePackage(functions.config().stripe.livekey);
 const donationDB = admin.database().ref('donations');
+const donationDollarsDB = admin.database().ref('donationdollars');
 const corsAllowed = cors({ origin: true });
 const singleTicketPrice = 500;
 // Charge and save an entry
@@ -50,6 +51,9 @@ exports.saveEntry = functions.https.onRequest((req, res) => {
                 address: req.body.address,
                 postalCode: req.body.postalCode,
                 tickets: req.body.tickets
+            });
+            yield donationDollarsDB.push({
+                amount: req.body.donation
             });
             // Send back response
             return res.send({ "status": "Success" });

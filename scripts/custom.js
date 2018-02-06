@@ -36,7 +36,7 @@ function stripeTokenHandler(token) {
 var ticketsSelected = [];
 var ticketPrice = 500;
 var totalDonation = 0;
-var donationRef = firebase.database().ref('donations');
+var donationRef = firebase.database().ref('donationdollars');
 var donationGoal = 400000;
 
 function updateTotal() {
@@ -109,7 +109,7 @@ $(document).ready(function() {
   donationRef.on('value', function(snapshot) {
     var totalDonations = 0;
     snapshot.forEach(childSnapshot => {
-      totalDonations += parseInt(childSnapshot.val().donation); 
+      totalDonations += parseInt(childSnapshot.val().amount); 
     });
     var donationPercentage = Math.round((totalDonations / donationGoal) * 100);
     $('#donation-amount').text('$' + Math.round(totalDonations / 100));
