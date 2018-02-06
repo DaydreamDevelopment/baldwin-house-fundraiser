@@ -7,6 +7,7 @@ admin.initializeApp(functions.config().firebase);
 
 const stripe = stripePackage(functions.config().stripe.livekey);
 const donationDB = admin.database().ref('donations');
+const donationDollarsDB = admin.database().ref('donationdollars');
 const corsAllowed = cors({ origin: true });
 
 const singleTicketPrice = 500;
@@ -46,6 +47,10 @@ const singleTicketPrice = 500;
                 address: req.body.address,
                 postalCode: req.body.postalCode,
                 tickets: req.body.tickets
+            });
+
+            await donationDollarsDB.push({
+                amount: req.body.donation
             });
 
             // Send back response
